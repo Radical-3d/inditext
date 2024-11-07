@@ -1,0 +1,32 @@
+PriceDetailsDTO:
+  description: 'Details for the price requested'
+  type: object
+  properties:
+    validationDate:
+      type: string
+    chain:
+      description: 'Production chain'
+      type: integer
+
+ProductPriceDTO:
+  description: 'Price requested for the product'
+  type: object
+  properties:
+    priceId:
+      type: integer
+    validFrom:
+      type: string
+    validUntil:
+      type: string
+    product:
+      type: integer
+    chain:
+      description: 'Production chain'
+      type: integer
+    price:
+      type: number
+    currency:
+      type: string
+  #required:
+  #  - price
+  #  - -currency

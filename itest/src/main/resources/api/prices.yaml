@@ -1,0 +1,23 @@
+productPrice:
+  get:
+    tags:
+      - productPrice
+    operationId: getProductPricesByDate
+    parameters:
+      - name: productId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: priceDetails
+        in: query
+        required: true
+        schema:
+          $ref: '../model/price.detail.model.yaml#/PriceDetailsDTO'
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: '../model/price.detail.model.yaml#/ProductPriceDTO'

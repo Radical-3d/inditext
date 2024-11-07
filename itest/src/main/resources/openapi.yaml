@@ -1,0 +1,11 @@
+openapi: 3.0.1
+info:
+  title: iTest
+  description: 'Inditext Test'
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  # Product price:
+  /prices/{productId}/dates:
+    $ref: "./api/prices.yaml#/productPrice"

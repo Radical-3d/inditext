@@ -1,0 +1,33 @@
+server:
+  port: 9000
+
+logging:
+  level:
+    org.springframework.security: trace
+    org.springframework.security.oauth2: trace
+
+spring:
+  security:
+    user:
+      name: indiuser
+      password: indipass
+    oauth2:
+      authorizationserver:
+        client:
+          oidc-client:
+            registration:
+              client-id: "oidc-client"
+              client-secret: "{noop}secret"
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "authorization_code"
+                - "refresh_token"
+              redirect-uris:
+                - "https://oauthdebugger.com/debug"
+              post-logout-redirect-uris:
+                - "http://127.0.0.1:8080/"
+              scopes:
+                - "openid"
+                - "profile"
+            require-authorization-consent: true
